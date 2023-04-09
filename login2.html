@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+            margin-right: 150px;
+            margin-left: 80px;
+            padding-right: 30px;
+            
+		}
+
+		/* form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 100px;
+			background-color: #f2f2f2;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		} */
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+            align-items: center;
+			border-radius: 5px;
+			width: 200%;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+
+		#password {
+			position: relative;
+		}
+
+		#show-password {
+			position: absolute;
+			right: -4.8cm;
+			top: 50%;
+			transform: translateY(-50%);
+			cursor: pointer;
+		}
+
+		button[type="submit"] {
+			padding: 10px 20px;
+			background-color: #ad3d8f;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Login</h1>
+	<form action="login2.php" method="post">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username">
+
+		<label for="password">Password:</label>
+		<div id="password">
+			<input type="password" id="password-input" name="password">
+			<span id="show-password">&#x1f441;</span>
+		</div>
+
+		<button type="submit">Sign In</button>
+	</form>
+
+	<script>
+		const passwordInput = document.getElementById("password-input");
+		const showPassword = document.getElementById("show-password");
+
+		showPassword.addEventListener("click", () => {
+			if (passwordInput.type === "password") {
+				passwordInput.type = "text";
+				showPassword.innerHTML = "&#x1f443;";
+			} else {
+				passwordInput.type = "password";
+				showPassword.innerHTML = "&#x1f441;";
+			}
+		});
+	</script>
+    
+</body>
+</html>
